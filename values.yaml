@@ -1,0 +1,19 @@
+image:
+  repository: jellyfin/jellyfin
+  tag: latest
+
+service:
+  main:
+    type: NodePort
+    ports:
+      http:
+        port: 8096
+        nodePort: 30080
+
+persistence:
+  config:
+    enabled: true
+    storageClass: "local-path"  # o tu StorageClass
+    size: 5Gi
+  cache:
+    enabled: false
