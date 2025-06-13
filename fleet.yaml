@@ -1,8 +1,8 @@
 defaultNamespace: jellyfin
 helm:
   chart: jellyfin
-  repo: https://k8s-at-home.com/charts/
-  version: 10.2.2  # puedes verificar la última versión en el repositorio
-  releaseName: jellyfin
+  repo: https://utkuozdemir.github.io/helm-charts/
+  releaseName: my-jellyfin
+  version: 2.0.0
   valuesFiles:
     - values.yaml

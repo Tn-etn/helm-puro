@@ -1,19 +1,15 @@
 image:
   repository: jellyfin/jellyfin
   tag: latest
+  pullPolicy: IfNotPresent
 
 service:
-  main:
-    type: NodePort
-    ports:
-      http:
-        port: 8096
-        nodePort: 30080
+  type: LoadBalancer
+  port: 8096
 
 persistence:
   config:
     enabled: true
-    storageClass: "local-path"  # o tu StorageClass
+    storageClass: "local-path"  # o "standard", o la que tengas
+    accessMode: ReadWriteOnce
     size: 5Gi
-  cache:
-    enabled: false
